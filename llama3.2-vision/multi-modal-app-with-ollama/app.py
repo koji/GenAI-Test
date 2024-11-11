@@ -4,34 +4,31 @@ import gradio as gr
 import io
 import ollama
 
-# Constants
+# constants
 IMAGE_SIZE = (224, 224)
+IMAGE_FORMAT = 'PNG'
 MODEL_VISION = 'llama3.2-vision'
 MODEL_TEXT = 'llama3.2'
+ROLE_USER = 'user'
 
 def run_process(text, image=None):
-    def encode_image_to_base64(pil_image):
-        buffered = io.BytesIO()
-        pil_image.save(buffered, format="PNG")
-        return base64.b64encode(buffered.getvalue()).decode('utf-8')
-    
     try:
         if image is not None:
             pil_image = Image.fromarray(image.astype('uint8'), 'RGB').resize(IMAGE_SIZE)
-            base64_image = encode_image_to_base64(pil_image)
-            response = ollama.chat(
+            # Base64 encoding
+            base64_image = base64.b64encode(io.BytesIO(pil_image.save(io.BytesIO(), format=IMAGE_FORMAT)).getvalue()).decode('utf-8')
+            result = ollama.chat(
                 model=MODEL_VISION,
-                messages=[{'role': 'user', 'content': text, 'images': [base64_image]}]
-            )
-            result = response['message']['content']
+                messages=[{'role': ROLE_USER, 'content': text, 'images': [base64_image]}]
+            )['message']['content']
         else:
-            response = ollama.chat(
+            result = ollama.chat(
                 model=MODEL_TEXT,
-                messages=[{'role': 'user', 'content': text}]
-            )
-            result = response['message']['content']
+                messages=[{'role': ROLE_USER, 'content': text}]
+            )['message']['content']
 
     except Exception as e:
+        print(f"Error during processing: {e}")  # for debugging
         result = f"An error occurred: {str(e)}"
     
     return result
