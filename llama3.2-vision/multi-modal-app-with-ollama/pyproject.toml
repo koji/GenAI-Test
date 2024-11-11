@@ -1,0 +1,10 @@
+[project]
+name = "multi-modal-app-with-ollama"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "gradio>=5.5.0",
+    "ollama>=0.3.3",
+]

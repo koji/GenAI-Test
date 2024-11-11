@@ -1,0 +1,7 @@
+llama3.2-vision/multi-modal-app/.venv
+llama3.2-vision/multi-modal-app/.env
+llama3.2-vision/multi-modal-app/.gradio
+
+llama3.2-vision/multi-modal-app-with-ollama/.venv
+llama3.2-vision/multi-modal-app-with-ollama/.gradio
+

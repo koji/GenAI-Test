@@ -1,0 +1,15 @@
+[project]
+name = "multi-modal-app"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "accelerate>=1.1.1",
+    "bitsandbytes>=0.44.1",
+    "gradio>=5.5.0",
+    "huggingface-hub>=0.26.2",
+    "peft>=0.13.2",
+    "python-dotenv>=1.0.1",
+    "transformers>=4.46.2",
+]
