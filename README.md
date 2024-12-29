@@ -11,3 +11,4 @@
 - llama3.2-vision (python)
 - ollama (python)
 - webllm (nodejs)
+- removeBG (python)
