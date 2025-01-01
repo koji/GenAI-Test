@@ -1,5 +1,6 @@
-import ollama
 import os
+
+import ollama
 
 # model = "llama3.2"
 model = "gemma2:9b"
