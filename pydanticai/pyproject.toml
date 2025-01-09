@@ -1,0 +1,10 @@
+[project]
+name = "pydanticai"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "pydantic-ai-slim[openai]>=0.0.18",
+    "pydantic-ai[examples]>=0.0.18",
+]
