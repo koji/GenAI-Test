@@ -12,3 +12,4 @@
 - ollama (python)
 - webllm (nodejs)
 - removeBG (python)
+- streamlit-uv-Cerebras
