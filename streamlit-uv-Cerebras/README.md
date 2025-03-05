@@ -7,3 +7,14 @@ packages `streamlit` and `cerebras_cloud_sdk`
 uv sync
 uv run streamlit run app/app.py
 ```
+
+
+##  use optillm for CePO
+https://inference-docs.cerebras.ai/capabilities/cepo  
+
+```shell
+uv sync
+uv run optillm --base-url https://api.cerebras.ai --approach cepo --cepo_print_output true
+```
+
+then run the app and turn on use optillm in the sidebar

@@ -3280,6 +3280,7 @@ version = "0.1.0"
 source = { virtual = "." }
 dependencies = [
     { name = "cerebras-cloud-sdk" },
+    { name = "openai" },
     { name = "optillm" },
     { name = "streamlit" },
 ]
@@ -3287,6 +3288,7 @@ dependencies = [
 [package.metadata]
 requires-dist = [
     { name = "cerebras-cloud-sdk", specifier = ">=1.23.0" },
+    { name = "openai", specifier = ">=1.65.3" },
     { name = "optillm", specifier = ">=0.1.6" },
     { name = "streamlit", specifier = ">=1.42.2" },
 ]
