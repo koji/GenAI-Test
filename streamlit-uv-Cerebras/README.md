@@ -18,3 +18,5 @@ uv run optillm --base-url https://api.cerebras.ai --approach cepo --cepo_print_o
 ```
 
 then run the app and turn on use optillm in the sidebar
+
+![CePO](./CePO.png)
